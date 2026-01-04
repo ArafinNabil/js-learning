@@ -3,12 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>dom</title>
 </head>
 <body>
+  <button>
+    hello
+  </button>
+
+  <button class="js-second-btn"></button>
+
   <script>
-    console.log('button')
-    console.log('button1')
+    // document.title = 'hello'
+    // document.body.innerHTML = 'hello1';
+    console.log(document.querySelector('button')
+     .innerHTML);
+    document.querySelector('button').innerHTML = 'hi'
+    document.querySelector('.js-second-btn')
+     .innerHTML = '3rd button'
+    
   </script>
 </body>
 </html>

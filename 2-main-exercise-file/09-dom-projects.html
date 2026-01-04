@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>youtube subscribe button</p>
+
+  <button class="js-subs-btn" onclick="subsBtn()">subscribe</button>
+
+  <br><br><br><br><br>
+
+
+  <p>Amazon Shipping Calculator</p>
+  <p>orders under $40 has to pay $10 shipping</p>
+  <p>order over $40 free shipping </p>
+
+  <input type="text" placeholder="cost of order" class="costOrderInput"  onkeydown="eventListener(event)"> 
+  <button class=".js-calculate-btn" onclick="costCalculate()" >calculate</button>
+
+  <div class="js-disply-cost"></div>
+
+  <script>
+
+    function subsBtn() {
+      const btnElem = document.querySelector('.js-subs-btn')
+
+      if (btnElem.innerText === 'subscribe') {
+        btnElem.innerHTML = 'subscribed';
+      }
+      else {
+        btnElem.innerHTML = 'subscribe';      
+      }
+    };
+
+    function eventListener(event) {
+      if (event.key === 'Enter') {
+        costCalculate();
+
+      };
+    };
+
+    function costCalculate() {
+      const inputElem = document.querySelector('.costOrderInput');
+      let cost = Number(inputElem.value);
+
+      if (cost < 40) {
+        cost += 10;
+      }
+
+      displyElem = document.querySelector('.js-disply-cost')
+       .innerHTML = cost
+    };
+
+  </script>
+</body>
+</html>

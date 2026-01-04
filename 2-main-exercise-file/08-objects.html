@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script> /*
+    const product = {
+      name:'socks',
+      price:1010
+    };
+    console.log(product);
+    console.log(product.name)
+    console.log(product.name = 'cotton')
+    console.log(product.name1 = 'shirt')
+    console.log(product);
+   
+
+    const product2 = {
+      name:'people',
+      price: 1010,
+      'delivary-time': '1 day',
+      rating: {
+        stars:4.5,
+        numbers:35,
+      },
+      fun: function function1() {
+        console.log('how are you');      
+      }
+    }
+    console.log(product2)
+    console.log(product2.name)
+    console.log(product2['name']);
+    console.log(product2['price'])
+    console.log(product2['delivary-time'])
+    console.log(product2.rating.numbers)
+    console.log(product2.fun);
+
+    console.log(JSON.stringify(product2))
+
+    console.log(JSON.parse(JSON.stringify(product2)));
+
+     
+
+     const object1 = {
+      Message:'hello'
+     }
+
+     const object2 = object1;
+
+     object1.Message = 'good'
+     console.log(object1);
+     console.log(object2)
+
+     const object3 = {
+      message:'hello'
+     }
+
+     console.log(object1 === object3);
+     console.log(object1 === object2);
+*/
+     const object4 = {
+      message:'good job',
+      price:999
+     };
+
+     //const message = object4.message;
+
+     const {message, price} = object4;
+
+     console.log(message);
+     console.log(price);
+
+     const object5 = {
+    //message: message,
+      message,
+    //method: function funs1() {
+        //console.log('how are you')
+      //},
+      method() {
+        console.log('how are you')
+      }
+     }
+     console.log(object5)     
+     object5.method()
+     
+    </script>
+</body>
+</html>

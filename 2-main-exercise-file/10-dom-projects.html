@@ -14,6 +14,10 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .is-subscribed {
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
   </style>
 </head>
 <body>
@@ -40,6 +44,7 @@
 
       if (btnElem.innerText === 'subscribe') {
         btnElem.innerHTML = 'subscribed';
+        btnElem.classList.add('is-subscribed')
       }
       else {
         btnElem.innerHTML = 'subscribe';      

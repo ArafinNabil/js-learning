@@ -13,10 +13,21 @@
       border: none;
       font-weight: bold;
       cursor: pointer;
+      margin-bottom: 50px;
     }
     .is-subscribed {
       background-color: rgb(240, 240, 240);
       color: black;
+    }
+    .costOrderInput{
+      padding: 10px;
+      font-size: 15px;
+    }
+    .calculate-btn {
+      background-color:green;
+      color: white;
+      border: none;
+      padding: 13px;
     }
   </style>
 </head>
@@ -25,15 +36,13 @@
 
   <button class="js-subs-btn subs-btn" onclick="subsBtn()">subscribe</button>
 
-  <br><br><br><br><br>
-
 
   <p>Amazon Shipping Calculator</p>
   <p>orders under $40 has to pay $10 shipping</p>
   <p>order over $40 free shipping </p>
 
   <input type="text" placeholder="cost of order" class="costOrderInput"  onkeydown="eventListener(event)"> 
-  <button class=".js-calculate-btn" onclick="costCalculate()" >calculate</button>
+  <button class=".js-calculate-btn calculate-btn" onclick="costCalculate()" >calculate</button>
 
   <div class="js-disply-cost"></div>
 
@@ -47,7 +56,8 @@
         btnElem.classList.add('is-subscribed')
       }
       else {
-        btnElem.innerHTML = 'subscribe';      
+        btnElem.innerHTML = 'subscribe';
+        btnElem.classList.remove('is-subscribed')  
       }
     };
 

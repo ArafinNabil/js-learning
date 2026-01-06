@@ -1,82 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
-    <p>Rock Paper Scissors</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/10-rock-paper-scissors.css">
+  <title>RPS game</title>
+  
+</head>
+<body>
 
-    <button onclick="playGame('rock')">Rock</button>
-    <button onclick="playGame('paper')">Paper</button>
-    <button onclick="playGame('scissors')">Scissors</button>
+  <div class="game-card">
+    <div class="title">NEON RPS</div>
 
-    <p class="js-result"></p>
-    <p class="js-moves"></p>
-    <p class="js-score"></p>
-    
+    <div class="button-group">
+      <button class="move-btn" onclick="playGame('rock')">✊</button>
+      <button class="move-btn" onclick="playGame('paper')">✋</button>
+      <button class="move-btn" onclick="playGame('scissors')">✌️</button>
+    </div>
 
-    <button onclick="resetScore()">Reset</button>
+    <div class="result-text js-result"></div>
+    <div class="moves-display js-moves">Pick a move to start</div>
 
-    <script>
-      const score = JSON.parse(localStorage.getItem('score')) || {
-        wins: 0,
-        loses: 0,
-        ties: 0
-      };
+    <div class="score-container">
+      <div class="score-box">
+        <span class="score-label">Wins</span>
+        <span class="score-val js-wins">0</span>
+      </div>
+      <div class="score-box">
+        <span class="score-label">Loses</span>
+        <span class="score-val js-loses">0</span>
+      </div>
+      <div class="score-box">
+        <span class="score-label">Ties</span>
+        <span class="score-val js-ties">0</span>
+      </div>
+    </div>
 
-      updateScore();
-
-      function playGame(playerMove) {
-        const computerMove = pickComputerMove();
-        let result = '';
-
-        if (playerMove === computerMove) {
-          result = 'Tie.';
-        } else if (
-          (playerMove === 'rock' && computerMove === 'scissors') ||
-          (playerMove === 'paper' && computerMove === 'rock') ||
-          (playerMove === 'scissors' && computerMove === 'paper')
-        ) {
-          result = 'You win.';
-        } else {
-          result = 'You lose.';
-        }
-
-        if (result === 'You win.') score.wins++;
-        if (result === 'You lose.') score.loses++;
-        if (result === 'Tie.') score.ties++;
-
-        localStorage.setItem('score', JSON.stringify(score));
-        updateScore();
-
-        document.querySelector('.js-result')
-         .innerHTML = result;
-
-        document.querySelector('.js-moves')
-              .innerHTML = `you ${playerMove} - ${computerMove} computer`;
-
-      }
-
-      function updateScore() {
-        document.querySelector('.js-score').innerHTML =
-          `Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}`;
-      }
-
-      function resetScore() {
-        score.wins = 0;
-        score.loses = 0;
-        score.ties = 0;
-        localStorage.removeItem('score');
-        updateScore();
-      }
-
-      function pickComputerMove() {
-        const randomNumber = Math.random();
-
-        if (randomNumber < 1 / 3) return 'rock';
-        if (randomNumber < 2 / 3) return 'paper';
-        return 'scissors';
-      } 
-    </script>
-  </body>
+    <button class="reset-link" onclick="resetScore()">Reset Game History</button>
+  </div>
+<script src="scripts/10-rock-paper-scissors.js"></script>
+</body>
 </html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator-container {
+      background-color: #000;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+
+    .js-calculation {
+      color: white;
+      font-size: 40px;
+      text-align: right;
+      height: 60px;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    .button-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      height: 60px;
+      width: 60px;
+      border-radius: 50px;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    /* Number Buttons */
+    .number-btn {
+      background-color: #333333;
+      color: white;
+    }
+
+    .number-btn:hover {
+      background-color: #505050;
+    }
+
+    /* Operator Buttons */
+    .operator-btn {
+      background-color: #ff9f0a;
+      color: white;
+    }
+
+    .operator-btn:hover {
+      background-color: #ffb340;
+    }
+
+    /* Special Buttons */
+    .clear-btn {
+      background-color: #a5a5a5;
+      color: black;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
+
+    .clear-btn:hover {
+      background-color: #d9d9d9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator-container">
+    <p class="js-calculation"></p>
+
+    <div class="button-row">
+      <button class="number-btn" onclick="updateCalculation('1');">1</button>
+      <button class="number-btn" onclick="updateCalculation('2');">2</button>
+      <button class="number-btn" onclick="updateCalculation('3');">3</button>
+      <button class="operator-btn" onclick="updateCalculation(' + ');">+</button>
+    </div>
+
+    <div class="button-row">
+      <button class="number-btn" onclick="updateCalculation('4');">4</button>
+      <button class="number-btn" onclick="updateCalculation('5');">5</button>
+      <button class="number-btn" onclick="updateCalculation('6');">6</button>
+      <button class="operator-btn" onclick="updateCalculation(' - ');">-</button>
+    </div>
+
+    <div class="button-row">
+      <button class="number-btn" onclick="updateCalculation('7');">7</button>
+      <button class="number-btn" onclick="updateCalculation('8');">8</button>
+      <button class="number-btn" onclick="updateCalculation('9');">9</button>
+      <button class="operator-btn" onclick="updateCalculation(' * ');">*</button>
+    </div>
+
+    <div class="button-row">
+      <button class="number-btn" onclick="updateCalculation('0');">0</button>
+      <button class="number-btn" onclick="updateCalculation('.');">.</button>
+      <button class="operator-btn" onclick="
+        calculation = eval(calculation);
+        displayCalculation();
+        localStorage.setItem('calculation', calculation);
+      ">=</button>
+      <button class="operator-btn" onclick="updateCalculation(' / ');">/</button>
+    </div>
+
+    <button class="clear-btn" onclick="
+      calculation = '';
+      displayCalculation();
+      localStorage.setItem('calculation', calculation);
+    ">Clear</button>
+  </div>
+
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+    displayCalculation();
+
+    function updateCalculation(value) {
+      calculation += value;
+      displayCalculation();
+      localStorage.setItem('calculation', calculation);
+    }
+
+    function displayCalculation() {
+      // If display is empty, show 0 as a placeholder
+      document.querySelector('.js-calculation')
+        .innerHTML = calculation || '0';
+    }
+  </script>
+</body>
+</html>

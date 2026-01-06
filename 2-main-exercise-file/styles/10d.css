@@ -1,0 +1,18 @@
+    .now {
+      background-color:black;
+      padding: 10px 20px;
+      color: white;
+      font: 1rem;
+      border: none;
+      border-radius:5px ;
+      font-weight: bold;
+    }
+    .later {      
+      background-color: rgb(230, 230, 230);
+      padding: 10px 20px;
+      color: black;
+      font-weight: bold;
+      font: 1rem;
+      border: none;
+      border-radius:5px ;
+    }

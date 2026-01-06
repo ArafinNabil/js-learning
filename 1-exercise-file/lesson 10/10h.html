@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .subs-btn {
+      color: #fff;
+      background-color: black;
+      padding: 10px 15px 10px 15px;
+      border-radius: 50px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 50px;
+    }
+    .is-subscribed {
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+    .costOrderInput{
+      padding: 10px;
+      font-size: 15px;
+    }
+    .calculate-btn {
+      background-color:green;
+      color: white;
+      border: none;
+      padding: 13px;
+    }
+  </style>
+</head>
+<body>
+  <p>youtube subscribe button</p>
+
+  <button class="js-subs-btn subs-btn" onclick="subsBtn()">subscribe</button>
+
+
+  <p>Amazon Shipping Calculator</p>
+  <p>orders under $40 has to pay $10 shipping</p>
+  <p>order over $40 free shipping </p>
+
+  <input type="text" placeholder="cost of order" class="costOrderInput"  onkeydown="eventListener(event)"> 
+  <button class=".js-calculate-btn calculate-btn" onclick="costCalculate()" >calculate</button>
+
+  <div class="js-disply-cost"></div>
+
+<script>
+  function subsBtn() {
+    const btnElem = document.querySelector('.js-subs-btn');
+
+    if (btnElem.innerText === 'subscribe') {
+      btnElem.innerText = 'subscribed';
+      btnElem.classList.add('is-subscribed');
+    } else {
+      btnElem.innerText = 'subscribe';
+      btnElem.classList.remove('is-subscribed');
+    }
+  }
+
+  function eventListener(event) {
+    if (event.key === 'Enter') {
+      costCalculate();
+    }
+  }
+
+  function costCalculate() {
+    const inputElem = document.querySelector('.costOrderInput');
+    const displyElem = document.querySelector('.js-disply-cost');
+    let cost = Number(inputElem.value);
+
+    if (cost <= 0 || isNaN(cost)) {
+      displyElem.innerHTML = 'You cannot enter less than or equal to 0';
+      return;
+    }
+
+    if (cost < 40) {
+      cost += 10;
+    }
+
+    displyElem.innerHTML = `$${cost}`;
+  }
+</script>
+
+</body>
+</html>

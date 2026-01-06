@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <button onclick="  console.log(`cartQuantity is: ${cartQuantity}`);">
+    show quantity
+  </button>
+
+  <button onclick="CalCartQuantity(1)">add to cart</button>
+
+  <button onclick="CalCartQuantity(2) "> +2</button>
+
+  <button onclick="CalCartQuantity(3)"> +3</button>
+
+  <button onclick="CalCartQuantity(4) ">+4</button>
+
+  <button onclick="CalCartQuantity(5) ">+5</button>
+
+
+  <button onclick="CalCartQuantity(-5) ">-1</button>
+
+
+  <button onclick="CalCartQuantity(-2)">-2</button>
+
+
+  <button onclick="CalCartQuantity(-3)">-3;</button>
+
+  <p class="js-display-quantity"></p>
+
+</body>
+
+  <script>
+    let cartQuantity = 0;
+    function CalCartQuantity (value) {
+     if (cartQuantity + value > 10) {
+        alert('The cart is full');
+        return;
+      }
+
+    if (cartQuantity + value < 0) {
+      alert('Not enough items in the cart');
+      return;
+    }
+  
+        cartQuantity += value;
+        console.log(cartQuantity);
+      
+      document.querySelector('.js-display-quantity').innerHTML = cartQuantity;
+    }
+
+
+  </script>
+
+</html>

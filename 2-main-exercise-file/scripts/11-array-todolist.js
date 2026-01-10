@@ -10,30 +10,29 @@
 
   renderTodoList()
 
-  function renderTodoList() {
-    
-    let todoHtml = '';
+function renderTodoList() {
+  let todoHtml = '';
 
-    for (let i = 0; i < todoList.length; i++) {
-      const todoObject = todoList[i];
-      const {name, dueDate} = todoObject;
-      
-      html = 
-      `<p>
-       ${name} ${dueDate}
-        <button onclick="todoList.splice(${i},1);
+  for (let i = 0; i < todoList.length; i++) {
+    const {name, dueDate} = todoList[i];
+
+    let html = `
+      <div>${name}</div>
+      <div>${dueDate}</div>  
+      <button class="delete-todo-btn"
+        onclick="todoList.splice(${i},1); 
         renderTodoList();">delete
-        </button> 
-      </p>`;
-      todoHtml += html ;
-    
-      document.querySelector('.js-display-todo').innerHTML = todoHtml;  
-    };
-    console.log(todoHtml)
-  };
+      </button>
+    `;
+    todoHtml += html;
+  }
+
+  document.querySelector('.js-display-todo').innerHTML = todoHtml;
+}
+
 
   function addTodo() {
-    
+
     let inputElem = document.querySelector('.js-input');
     let name = inputElem.value;
 

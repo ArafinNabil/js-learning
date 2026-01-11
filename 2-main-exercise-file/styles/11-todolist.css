@@ -15,7 +15,7 @@ body {
 .todo-grid,
 .todo-input-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 200px 160px 100px;
   gap: 12px;
   align-items: center;
 }
@@ -24,6 +24,8 @@ body {
 .todo-input-grid {
   margin-bottom: 18px;
   background-color: #ffffff;
+  width: 515px;
+  margin-left: -15px;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);

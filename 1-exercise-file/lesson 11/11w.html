@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function unique(array){
+      let result = [];
+      let seen = {}
+
+      for (let i = 0; i < array.length; i++) {
+        let current = array[i]
+
+        if (!seem[current]) {
+          result.push(current);
+          seen[current] = true
+        }
+      }  
+      return result;
+    }
+  console.log(unique(['green','red','blue','red']))
+  </script>
+</body>
+</html>

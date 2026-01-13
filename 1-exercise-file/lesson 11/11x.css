@@ -1,0 +1,108 @@
+/* CSS Reset-ish */
+* {
+  box-sizing: border-box;
+}
+
+/* Page styling */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f9fafb, #eef2f7);
+  padding: 30px;
+  color: #333;
+}
+
+/* Grid layout */
+.todo-grid,
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 200px 160px 100px;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Input row card */
+.todo-input-grid {
+  margin-bottom: 18px;
+  background-color: #ffffff;
+  width: 515px;
+  margin-left: -15px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Inputs */
+.name-input,
+.date-input {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Input focus */
+.name-input:focus,
+.date-input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* Shared button style */
+.add-btn,
+.delete-todo-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+
+/* Add button */
+.add-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* Delete button */
+.delete-todo-btn {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+/* Hover effects */
+.add-btn:hover,
+.delete-todo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Active click */
+.add-btn:active,
+.delete-todo-btn:active {
+  transform: scale(0.97);
+}
+
+/* Todo rows */
+.todo-grid {
+  row-gap: 12px;
+}
+
+/* Individual todo row */
+.todo-grid > div {
+  background-color: #ffffff;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+}
+
+/* Align text vertically */
+.todo-grid > div:nth-child(3n) {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+

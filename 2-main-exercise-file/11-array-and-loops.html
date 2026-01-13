@@ -43,7 +43,7 @@
   console.log(element)
   
  }
-  */
+ 
 
     const nums = [1,2,3,4];
     let total = 0;
@@ -63,7 +63,70 @@
    
   }  console.log(dubble)
   console.log(numsDouble)
-  
+   */
+    /*
+  const array1 = [1,2,3];
+  const array2 = array1.splice();
+
+  array2.push(4);
+
+  console.log(array1);
+  console.log(array2);
+
+  const [ft, nd] = [1,2,3];
+  console.log(ft);
+  console.log(nd);
+*/
+  // for (let i = 0; i < 10; i++) {
+  //   console.log(i)
+  //   if (i === 8) {
+  //     break;      
+  //   }
+  // }
+/*
+  for (let i = 0; i < 10; i++) {
+
+    if (i === 4) {
+      continue;      
+    }    
+    if (i % 3 === 0) {
+      continue;      
+    }    
+    console.log(i);
+
+    if (i === 7) {
+      break;      
+    }  
+  };
+
+  let i = 1;
+
+  while(i < 10) {
+    if (i % 3 === 0) {
+      i++;
+      continue;
+    }
+    console.log(i)
+    i++;
+  }
+  */
+  function doubleArray(nums) {
+  const numsDouble = [];
+
+    for (let i = 0; i < nums.length; i++) {
+      const num = nums[i]*2;
+      numsDouble.push(num)
+    }
+    console.log(numsDouble)
+  }
+  doubleArray([1,1,2])
+  doubleArray([2,8,3])
+
+
+  function greet(name) {
+    return name;
+  }
+  console.log(greet('alex'))
   </script>
 </body>
 </html> 

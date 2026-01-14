@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+ <title>app</title>
+</head>
+<body>
+  <button onclick="message++">add</button>
+  <button onclick="message--">remove</button>
+
+
+  <script>
+    let  message = 2;
+
+    setInterval(function()  {
+      if(document.title === 'app') {
+        document.title =`(${message}) new messages`;
+      } else {
+        document.title = 'app';
+      }
+    }, 1000);
+
+  </script>
+</body>
+</html>

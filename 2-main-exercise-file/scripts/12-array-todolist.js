@@ -8,27 +8,39 @@
     }
   ];
 
-  renderTodoList()
+  renderTodoList();
+
+  document.querySelector('.js-addTodo-btn')
+   .addEventListener('click', () => {
+      addTodo();
+   })
 
 function renderTodoList() {
   let todoHtml = '';
 
-  todoList.forEach(function (todoObject, index) {
+  todoList.forEach((todoObject, index) => {
     const {name, dueDate} = todoObject;
     let html = `
       <div>${name}</div>
       <div>${dueDate}</div>  
-      <button class="delete-todo-btn"
-        onclick="todoList.splice(${index},1); 
-        renderTodoList();">delete
+      <button 
+        class="delete-todo-btn js-delete-todo-btn">
+        delete
       </button>
     `;
     todoHtml += html;
-  })
+  });
 
   document.querySelector('.js-display-todo').innerHTML = todoHtml;
-}
 
+  document.querySelectorAll('.js-delete-todo-btn')
+   .forEach((deleteBtn, index) => {
+      deleteBtn.addEventListener('click', () => {
+        todoList.splice(index,1); 
+        renderTodoList();
+      })
+    })
+};
 
   function addTodo() {
 

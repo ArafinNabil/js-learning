@@ -37,12 +37,27 @@
   const btnElem = document.querySelector('.js-btn');
   btnElem.addEventListener('click', () => {
     console.log('hello');
-    
+
     setTimeout(() => {
       btnElem.innerText = 'done'
     }, 120)
 
   });
+
+  console.log([1,-3, 5].filter((value,index) => {
+    // if(value>0){
+    //   return true;
+    // }
+    // else {
+    //   return false;
+    // }
+    return value >= 0;
+  }));
+
+
+  console.log([1,2,3].map((value, idex) => {
+    return value * 2;
+  }));
 
 
 

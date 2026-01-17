@@ -6,8 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-  <button 
-    onclick="addToCart()">Add to cart
+  <button class="js-btn">Add to cart
   </button>
 
   <p class="js-display"></p>
@@ -19,7 +18,7 @@
       btnElem.textContent = 'added'
 
 
-      setTimeout(function()  {
+      setTimeout(() => {
         btnElem.innerHTML = '';
       }, 2000);
     };

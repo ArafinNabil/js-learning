@@ -19,7 +19,7 @@
         // it doesn't remove the message too quickly.
         clearTimeout(timeoutId);
 
-        timeoutId = setTimeout(function() {
+        timeoutId = setTimeout(() => {
           messageElement.innerHTML = '';
         }, 2000);
       }

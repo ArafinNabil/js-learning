@@ -10,10 +10,10 @@
   <script>
     let  message = 0;
 
-    setInterval(function()  {
+    setInterval(() => {
       if (message > 0 ) {
         if(document.title === 'app') {
-          document.title =`(${message}) new messages`;
+          document.title  =`(${message}) new messages`;
         } else {
           document.title = 'app';
         }

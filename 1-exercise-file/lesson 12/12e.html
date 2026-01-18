@@ -12,16 +12,18 @@
   <p class="js-display"></p>
 
   <script>
-
-    function addToCart() {
-      const btnElem = document.querySelector('.js-display')
+document.querySelector('.js-btn') 
+ .addEventListener('click', () => {
+    const btnElem = document.querySelector('.js-display')
+    
       btnElem.textContent = 'added'
-
-
       setTimeout(() => {
         btnElem.innerHTML = '';
       }, 2000);
-    };
+ }
+);
+
+
 
   </script>
 </body>

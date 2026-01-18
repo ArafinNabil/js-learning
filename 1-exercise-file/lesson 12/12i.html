@@ -1,28 +1,35 @@
 <!DOCTYPE html>
+<html>
 <head>
- <title>app</title>
+  <title>app</title>
 </head>
 <body>
-  <button onclick="message++">add</button>
-  <button onclick="if(message > 0)message--">remove</button>
-
+  <button class="addbtn">add</button>
+  <button class="removebtn">remove</button>
 
   <script>
-    let  message = 0;
+    let message = 2;
+
+    const addButton = document.querySelector('.addbtn');
+    const removeButton = document.querySelector('.removebtn');
+
+    addButton.addEventListener('click', () => {
+      message++;
+    });
+
+    removeButton.addEventListener('click', () => {
+      message = Math.max(0, message - 1); // Prevent negative messages
+    });
 
     setInterval(() => {
-      if (message > 0 ) {
-        if(document.title === 'app') {
-          document.title  =`(${message}) new messages`;
-        } else {
-          document.title = 'app';
-        }
-      }
-      else if (message = 0) {
+      if (message > 0) {
+        document.title = (document.title === 'app') 
+          ? `(${message}) new messages` 
+          : 'app';
+      } else {
         document.title = 'app';
       }
     }, 1000);
-
   </script>
 </body>
 </html>
